@@ -1,0 +1,63 @@
+.container {
+  padding: 0 1.5rem;
+  margin: auto;
+  overflow: hidden;
+}
+
+// Button
+%btn-share {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  transition: all 0.5s;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.bg {
+  &-main {
+    background: $main-color;
+  }
+  &-dark {
+    background: #333;
+  }
+
+  &-grey {
+    background: #404f63;
+  }
+}
+
+.btn {
+  &-light {
+    @extend%btn-share;
+    color: #333;
+    background-color: $light-color;
+  }
+
+  &-main {
+    @extend%btn-share;
+    color: #333;
+    background-color: $main-color;
+  }
+
+  &-dark {
+    @extend%btn-share;
+    color: white;
+    background-color: $dark-color;
+  }
+}
+
+button[class^="btn-"]:hover,
+a[class^="btn-"]:hover,
+input[class^="btn-"]:hover {
+  background-color: $main-color;
+}
+
+.lead {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}

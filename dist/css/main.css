@@ -1,0 +1,497 @@
+/* line 1, scss/_utilities.scss */
+.container {
+  padding: 0 1.5rem;
+  margin: auto;
+  overflow: hidden; }
+
+/* line 8, scss/_utilities.scss */
+.btn-light, .btn-main, .btn-dark {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  transition: all 0.5s;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px; }
+
+/* line 18, scss/_utilities.scss */
+.bg-main {
+  background: #ffbc00; }
+
+/* line 21, scss/_utilities.scss */
+.bg-dark {
+  background: #333; }
+
+/* line 25, scss/_utilities.scss */
+.bg-grey {
+  background: #404f63; }
+
+/* line 31, scss/_utilities.scss */
+.btn-light {
+  color: #333;
+  background-color: #f4f4f4; }
+
+/* line 37, scss/_utilities.scss */
+.btn-main {
+  color: #333;
+  background-color: #ffbc00; }
+
+/* line 43, scss/_utilities.scss */
+.btn-dark {
+  color: white;
+  background-color: #333; }
+
+/* line 50, scss/_utilities.scss */
+button[class^="btn-"]:hover,
+a[class^="btn-"]:hover,
+input[class^="btn-"]:hover {
+  background-color: #ffbc00; }
+
+/* line 56, scss/_utilities.scss */
+.lead {
+  font-size: 1.3rem;
+  margin-bottom: 2rem; }
+
+/* line 61, scss/_utilities.scss */
+.text-center {
+  text-align: center; }
+
+/* line 1, scss/_item_grid.scss */
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3); }
+
+/* line 7, scss/_item_grid.scss */
+.item {
+  position: relative;
+  background-color: #ffbc00;
+  overflow: hidden; }
+  /* line 12, scss/_item_grid.scss */
+  .item::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background: inherit;
+    opacity: 0.9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(2) translateX(-75%) translateY(-75%) rotate(-28deg);
+    transition: transform 3s cubic-bezier(0.2, 1, 0.3, 1); }
+  /* line 27, scss/_item_grid.scss */
+  .item:hover:after {
+    transform: scale(2) translateX(0) translateY(0) rotate(-28deg); }
+  /* line 32, scss/_item_grid.scss */
+  .item:hover .item-img {
+    transform: scale(1.2); }
+  /* line 37, scss/_item_grid.scss */
+  .item:hover .item-text {
+    opacity: 1;
+    transform: translateY(0); }
+  /* line 42, scss/_item_grid.scss */
+  .item-img {
+    height: auto;
+    transform: translateZ(0);
+    display: block;
+    transition: 750ms cubic-bezier(0.2, 1, 0.3, 1); }
+  /* line 49, scss/_item_grid.scss */
+  .item-img:before {
+    content: "";
+    display: block;
+    padding-top: 75%;
+    overflow: hidden; }
+  /* line 56, scss/_item_grid.scss */
+  .item-img img {
+    position: absolute;
+    top: 0;
+    left: 0; }
+  /* line 62, scss/_item_grid.scss */
+  .item-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    text-align: center;
+    z-index: 1;
+    color: white;
+    transform: translateY(-20%);
+    transition: opacity 750ms cubic-bezier(0.2, 1, 0.3, 1), transform 500ms cubic-bezier(0.2, 1, 0.3, 1);
+    transition-delay: 350ms; }
+  /* line 79, scss/_item_grid.scss */
+  .item-text-wrap {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%); }
+  /* line 87, scss/_item_grid.scss */
+  .item-text-title {
+    font-size: 2rem;
+    padding: 0 1rem;
+    margin: 5px 0 0 0; }
+  /* line 93, scss/_item_grid.scss */
+  .item-text-category {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    opacity: 0.7;
+    margin: 0; }
+
+/* line 6, scss/main.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+/* line 11, scss/main.scss */
+body {
+  font-family: "Dosis", sans-serif;
+  line-height: 1.6;
+  background-color: #404f63; }
+
+/* line 17, scss/main.scss */
+a {
+  text-decoration: none;
+  color: #333; }
+
+/* line 22, scss/main.scss */
+ul {
+  list-style: none; }
+
+/* line 26, scss/main.scss */
+h2,
+h3,
+h4 {
+  text-transform: uppercase; }
+
+/* line 32, scss/main.scss */
+img {
+  width: 100%; }
+
+/* line 37, scss/main.scss */
+#logo {
+  width: 120px;
+  height: 60px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 5px; }
+
+/* line 45, scss/main.scss */
+#header-home > .container {
+  padding: 0; }
+  /* line 48, scss/main.scss */
+  #header-home > .container .top {
+    background: transparent; }
+
+/* line 53, scss/main.scss */
+#main-nav {
+  z-index: 100;
+  padding: 16px 65px;
+  display: flex;
+  width: 100%;
+  height: 80px;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  position: fixed;
+  top: 0px;
+  background: #52678280;
+  transition: 0.5s ease-in; }
+  /* line 67, scss/main.scss */
+  #main-nav ul {
+    display: flex; }
+  /* line 70, scss/main.scss */
+  #main-nav li {
+    padding: 1rem 1.5rem; }
+  /* line 74, scss/main.scss */
+  #main-nav a {
+    color: #fff;
+    text-transform: uppercase;
+    border-bottom: 3px transparent solid;
+    padding-bottom: 0.5rem;
+    transition: border-color 0.5s; }
+    /* line 81, scss/main.scss */
+    #main-nav a:hover {
+      border-color: #ccc; }
+    /* line 85, scss/main.scss */
+    #main-nav a.current {
+      border-color: #ffbc00; }
+
+/* line 92, scss/main.scss */
+#header-home {
+  background: url(https://source.unsplash.com/iUXB0DhKl74/1600x900) no-repeat center center/cover;
+  height: 100vh;
+  color: #fff; }
+  /* line 99, scss/main.scss */
+  #header-home .header-content {
+    margin-top: 100px;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 20%; }
+  /* line 107, scss/main.scss */
+  #header-home h1 {
+    font-weight: 300;
+    font-size: 4rem;
+    line-height: 1.3; }
+
+/* line 122, scss/main.scss */
+#about-a .container {
+  max-width: 2000px;
+  padding: 2rem;
+  color: #ffffffd9; }
+
+/* line 128, scss/main.scss */
+#about-a .lead,
+#about-a .section-title {
+  text-align: center; }
+
+/* line 132, scss/main.scss */
+#about-a .about-info {
+  display: grid;
+  grid-template-areas: "bioimg bio bio";
+  grid-gap: 1.2rem; }
+  /* line 137, scss/main.scss */
+  #about-a .about-info img {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%; }
+  /* line 143, scss/main.scss */
+  #about-a .about-info .bio {
+    display: flex;
+    align-items: center; }
+  /* line 148, scss/main.scss */
+  #about-a .about-info p {
+    font-size: 1.5rem; }
+
+/* line 153, scss/main.scss */
+#about-a .bio-img {
+  grid-area: bioimg; }
+
+/* line 157, scss/main.scss */
+#about-a .bio {
+  grid-area: bio;
+  border-left: 3px solid #ffbc00;
+  padding: 0.8rem; }
+
+/* line 167, scss/main.scss */
+#work {
+  background: #526680;
+  padding: 30px;
+  color: white;
+  margin: 100px 50px;
+  border-radius: 5px; }
+
+/* line 176, scss/main.scss */
+#main-footer {
+  background: #333;
+  color: #fff;
+  height: 5rem; }
+  /* line 177, scss/main.scss */
+  #main-footer a {
+    color: white;
+    margin-right: 1.5rem; }
+  /* line 182, scss/main.scss */
+  #main-footer a:hover {
+    color: #ffbc00; }
+  /* line 189, scss/main.scss */
+  #main-footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    height: 5rem;
+    align-items: center; }
+    /* line 195, scss/main.scss */
+    #main-footer .footer-content .social > .fab {
+      margin-right: 1.5rem;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      line-height: 20px;
+      text-align: center;
+      padding: 0.5rem; }
+
+/* line 213, scss/main.scss */
+#contact .container {
+  align-items: center;
+  justify-content: center; }
+
+/* line 217, scss/main.scss */
+#contact-a {
+  color: white;
+  margin-bottom: 50px; }
+  /* line 221, scss/main.scss */
+  #contact-a .spam {
+    margin: 15px; }
+  /* line 224, scss/main.scss */
+  #contact-a .contact-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  /* line 229, scss/main.scss */
+  #contact-a .contact-info {
+    width: 1500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    /* line 235, scss/main.scss */
+    #contact-a .contact-info img {
+      display: inline-block;
+      height: 500px;
+      width: 700px; }
+    /* line 241, scss/main.scss */
+    #contact-a .contact-info button {
+      width: 200px; }
+  /* line 245, scss/main.scss */
+  #contact-a .text-fields {
+    display: grid;
+    grid-template-areas: "name" "email" "phone" "message"; }
+    /* line 253, scss/main.scss */
+    #contact-a .text-fields .text-input {
+      border-radius: 3px;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem;
+      width: 500px; }
+    /* line 260, scss/main.scss */
+    #contact-a .text-fields .message-input {
+      height: 100px;
+      margin-bottom: 1rem; }
+
+/* line 268, scss/main.scss */
+#contact-b .my-info {
+  color: white;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center; }
+
+/* line 277, scss/main.scss */
+#contact-c {
+  color: white;
+  text-align: center;
+  background: #444; }
+
+@media (max-width: 1280px) {
+  /* line 4, scss/_media.scss */
+  #header-home {
+    height: 30rem; }
+    /* line 7, scss/_media.scss */
+    #header-home .header-content {
+      padding-top: 5rem; }
+  /* line 12, scss/_media.scss */
+  #work {
+    margin: 0px;
+    padding: 20px; }
+    /* line 16, scss/_media.scss */
+    #work p {
+      font-size: 0.95rem; }
+    /* line 20, scss/_media.scss */
+    #work h2 {
+      font-size: 23px; }
+  /* line 26, scss/_media.scss */
+  #contact-a .contact-info {
+    align-items: center;
+    justify-content: center; }
+    /* line 29, scss/_media.scss */
+    #contact-a .contact-info img {
+      display: none; } }
+
+@media (max-width: 600px) {
+  /* line 38, scss/_media.scss */
+  #main-nav {
+    flex-direction: column;
+    align-items: center;
+    background: #52678280;
+    height: 155px;
+    justify-content: start; }
+    /* line 46, scss/_media.scss */
+    #main-nav li {
+      padding: 1rem; }
+  /* line 52, scss/_media.scss */
+  #header-home {
+    height: 10rem;
+    border-bottom: 3px solid #ffbc00; }
+    /* line 56, scss/_media.scss */
+    #header-home .header-content {
+      display: none; }
+  /* line 64, scss/_media.scss */
+  #about-a .about-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    /* line 70, scss/_media.scss */
+    #about-a .about-info img {
+      height: 250px;
+      width: 250px; }
+  /* line 76, scss/_media.scss */
+  #about-a .bio-img {
+    grid-area: bioimg;
+    align-items: center; }
+  /* line 81, scss/_media.scss */
+  #about-a .bio {
+    grid-area: bio;
+    border-top: 3px solid #ffbc00;
+    border-left: none;
+    padding: 0.8rem; }
+  /* line 90, scss/_media.scss */
+  #work {
+    margin: 0px; }
+    /* line 94, scss/_media.scss */
+    #work .items {
+      grid-template-columns: 1fr; }
+    /* line 98, scss/_media.scss */
+    #work p {
+      font-size: 0.95rem; }
+    /* line 102, scss/_media.scss */
+    #work h2 {
+      font-size: 23px; }
+  /* line 108, scss/_media.scss */
+  #contact-a {
+    padding: 20px 0px; }
+    /* line 111, scss/_media.scss */
+    #contact-a .contact-info img {
+      display: none; }
+    /* line 115, scss/_media.scss */
+    #contact-a .contact-info .text-input {
+      width: 280px; }
+    /* line 119, scss/_media.scss */
+    #contact-a .contact-info .message-input {
+      height: 100px;
+      width: 280px; }
+  /* line 127, scss/_media.scss */
+  #contact-b .my-info {
+    grid-template-columns: 1fr;
+    grid-gap: 1rem; }
+  /* line 134, scss/_media.scss */
+  #main-footer {
+    height: 7rem; }
+    /* line 136, scss/_media.scss */
+    #main-footer .footer-content {
+      justify-content: center;
+      flex-direction: column;
+      padding: 20px; }
+    /* line 142, scss/_media.scss */
+    #main-footer .social {
+      margin-top: 3px; } }
+
+@media (max-width: 320px) {
+  /* line 149, scss/_media.scss */
+  #contact-a {
+    padding: 20px 0px; }
+    /* line 152, scss/_media.scss */
+    #contact-a .contact-info img {
+      display: none; }
+    /* line 156, scss/_media.scss */
+    #contact-a .contact-info .text-input {
+      width: 250px; }
+    /* line 160, scss/_media.scss */
+    #contact-a .contact-info .message-input {
+      height: 100px;
+      width: 250px; } }
+
+@media (min-width: 1600px) {
+  /* line 169, scss/_media.scss */
+  #main-nav {
+    padding: 16px 200px; } }
